@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthOTest", "AuthOTest\AuthOTest.csproj", "{032DBD54-B0AA-452E-B9D3-13FC39128E89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{032DBD54-B0AA-452E-B9D3-13FC39128E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032DBD54-B0AA-452E-B9D3-13FC39128E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032DBD54-B0AA-452E-B9D3-13FC39128E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032DBD54-B0AA-452E-B9D3-13FC39128E89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A62274B-C6C8-4C49-9B37-B8DB8F85843A}
+	EndGlobalSection
+EndGlobal
