@@ -12,7 +12,7 @@ builder.Services.AddAuth0WebAppAuthentication(options => {
     options.ClientId = builder.Configuration["Auth0:ClientId"];
 });
 
-// Add Authentication with Cookie
+//// Add Authentication with Cookie
 //builder.Services.AddAuthentication(options =>
 //{
 //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;

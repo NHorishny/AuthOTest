@@ -4,6 +4,7 @@ using Auth0.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 public class AccountController : Controller
@@ -15,24 +16,24 @@ public class AccountController : Controller
             .WithRedirectUri("/Home/Index") // Redirect back after login
             .Build();
 
+
         await HttpContext.ChallengeAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
 
-        //var token = await HttpContext.GetTokenAsync("id_token");
-        //Debug.WriteLine(token);
-        //Console.WriteLine("THIS IS THE TOKEN", token);
-
-        //// Store the token in an HttpOnly cookie
-        //if (token != null)
-        //{
-        //    HttpContext.Response.Cookies.Append("auth_token", token, new CookieOptions
-        //    {
-        //        HttpOnly = true,  // Ensures cookie is not accessible via JavaScript
-        //        Secure = true,    // Ensures cookie is only sent over HTTPS
-        //        SameSite = SameSiteMode.Strict  // Controls the scope of where the cookie is sent
-        //    });
-        //}
     }
-   
+
+    [Authorize]
+    public IActionResult Profile()
+    {
+        return View(new
+        {
+            Name = User?.Identity?.Name,
+            EmailAddress = User?.Claims
+            .FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value,
+            ProfileImage = User?.Claims
+            .FirstOrDefault(c => c.Type == "picture")?.Value
+        });
+    }
+
 
     // Logout action to clear authentication
     [Authorize]
@@ -51,4 +52,5 @@ public class AccountController : Controller
           CookieAuthenticationDefaults.AuthenticationScheme
         );
     }
+
 }

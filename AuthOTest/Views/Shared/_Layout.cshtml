@@ -23,13 +23,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SubApp">React</a>
                         </li>
                     </ul>
                 </div>
+                <span style="display: flex; flex-direction: row; align-items: center;">
+                    <p class="nav-link text-dark" style="margin:0" asp-area="" asp-controller="Account">
+                    Welcome, @User.Identity.Name!
+                </p>
                 <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
                     <button class="auth-buttons" type="submit">Logout</button>
                 </form>
+                </span>
             </div>
            
         </nav>

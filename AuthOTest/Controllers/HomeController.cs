@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure;
 
 namespace AuthOTest.Controllers
 {
@@ -11,9 +12,10 @@ namespace AuthOTest.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult SubApp()
         {
-            return View();
+            string reactAppUrl = "http://localhost:3000"; 
+            return Redirect(reactAppUrl);
         }
 
         public IActionResult Error()
